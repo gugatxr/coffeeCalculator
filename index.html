@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Coffee Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form id="calculator-form">
-    <label >Quantidade água(ml)</label>
-    <input type="number" id="calculator-form__water-input">
-    <button type="submit">Calcular</button>
-  </form>
+  <main class="content-wrapper">
+    <h1>coffeCalculator</h1>
+    <h2>Calcule quantas colheres de café você vai precisar</h2>
 
-  <div>Total: <span id="result-coffee"></span> colheres de sopa</div>
+    <form class="form-wrapper" id="calculator-form">
+      <label class="label">Quantidade água(ml)</label>
+      <input class="input" type="number" id="calculator-form__water-input">
+      <button class="button" type="submit">Calcular</button>
+    </form>
+
+    <div class="result">Você vai precisar de <span id="result-coffee">0</span> colheres de sopa</div>
+  </main>
 
   <script>
     (function(){
@@ -37,6 +43,7 @@
         };
 
         waterElement.addEventListener('keyup', calculateCoffe);
+        waterElement.addEventListener('change', calculateCoffe);
 
         document
           .querySelector('#calculator-form')
